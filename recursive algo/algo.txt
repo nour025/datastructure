@@ -1,0 +1,35 @@
+// Leap Year Checker
+function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return `${year} is a leap year.`;
+    } else {
+        return `${year} is not a leap year.`;
+    }
+}
+
+// Ticket Pricing
+function getTicketPrice(age) {
+    if (age <= 12) return "$10";
+    else if (age >= 13 && age <= 17) return "$15";
+    else return "$20";
+}
+
+// Fibonacci Sequence (Recursive)
+function fibonacci(n) {
+    if (n <= 0) return 0;
+    if (n === 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Palindrome Checker (Recursive)
+function isPalindrome(str) {
+    str = str.toLowerCase().replace(/[^a-z0-9]/g, ""); // Normalize string
+    
+    function check(left, right) {
+        if (left >= right) return true;
+        if (str[left] !== str[right]) return false;
+        return check(left + 1, right - 1);
+    }
+    
+    return check(0, str.length - 1);
+}
